@@ -1,0 +1,355 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 24px;
+    color:black;
+    background-color: #fff;
+
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.button {
+    font:inherit;
+
+    text-align: center;
+    color:#fff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #fb565a;
+	border:none;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: #fb565a;
+}
+
+.button:active {
+	background-color: #e84044;
+}
+.button:focus {
+    background-color: #d83438;
+}
+
+.main-header {
+    background-color: #efefef;
+}
+
+.site-navigation {
+	list-style: none;
+}
+
+.site-navigation a{
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color:#000;
+    vertical-align: middle;
+}
+.basket a {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color:#000;
+    vertical-align: middle;
+}
+
+/* slider */
+
+.slider {
+    height: 395px;
+    width: 100%; /* Поставить ширину контейнера*/
+    margin: 0 auto;
+    position: relative;
+    background-color: #efefef;
+}
+.slider-items {
+    
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	
+}
+.slider > input {
+	display: none;
+}
+.slides {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+}
+.slide1 { 
+    background-image: url(img/bg-slide-01.png); 
+	background-repeat: no-repeat;
+	background-position-x: 100%;
+	background-position-y: 0%;
+
+}
+.slide2 { 
+    background-image: url(img/bg-slide-02.png); 
+	background-repeat: no-repeat;
+	background-position-x: 100%;
+	background-position-y: 0%;
+}
+.slide3 { 
+    background-image: url(img/bg-slide-03.png);
+	background-repeat: no-repeat; 
+	background-position-x: 100%;
+	background-position-y: 0%;
+
+}
+.slider .controls {
+	left: 50%;
+	margin-left: -98px;
+    position: absolute;
+    top: 250px;
+    z-index: 1;
+}
+
+.slider label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+    margin-top:25px;
+    margin-right: 12px;
+    margin-bottom: 0;
+    margin-left: 16px;
+    position: relative;
+	width: 8px;
+	border-radius: 50%;
+	
+}
+.slider label:after {
+	content: " ";
+	display: block;
+	height: 16px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+    width: 16px;
+	border-radius: 50%;
+	background-color: white;
+	
+}
+
+/*Это где-то посмотрела, пока не поняла*/
+.slider label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3) {
+	background: #ddd;
+}
+.slides {
+	height: inherit;
+	opacity: 0;
+	position: absolute;
+	width: inherit;
+	z-index: 0;
+	transform: scale(1.5);
+}
+#slide1:checked ~ .slider-items > .slide1,
+#slide2:checked ~ .slider-items > .slide2,
+#slide3:checked ~ .slider-items > .slide3 {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
+}
+
+/* features */
+
+.features h3 {
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+.features-list, .partner-list {
+	list-style: none;
+}
+
+.features-item .button {
+    font:inherit;
+
+    text-align: center;
+    color:#fff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #fb565a;
+	border:none;
+	border-radius: 3px;
+}
+.features-item .button-green {
+	background-color: #00c671;
+}
+.features-item .button-yellow {
+	background-color: #eab534;
+}
+.about-us .description-list {
+	list-style: none;
+}
+/*добавить красные полоски списку*/
+.about-us .description-list::before {
+	content:"";
+	
+	width: 25px;
+    height: 2px;
+    background-color: #fb565a;
+}
+.about-us h2 {
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 45px;
+}
+/*Таблица*/
+.about-us caption {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+
+table .percent{
+	font-size: 45px;
+	font-weight: 500;
+}
+table td {
+	padding: 12px 16px;
+}
+/*footer*/
+.main-footer {
+    color:#000;
+
+    background-color: #fff;
+}
+footer .contacts h3 {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+
+/*Сетка*/
+.main-header {
+	width: 100%;
+	background-color: #eee;
+}
+.container, .main-footer {
+	width: 1160px;
+	margin:0 auto;
+}
+.header-container {
+	width: 1160px;
+	margin:0 auto;
+	padding-top:50px;
+}
+
+.main-header-navigation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding:10px;
+	
+	height: 65px;
+}
+.site-navigation {
+	width:700px;
+	display: flex;
+	justify-content: space-around;
+}
+.slider {
+	padding-top:10px;
+}
+
+
+.slider b {
+	font-size: 50px;
+	font-weight: 500;
+	line-height: 55px;
+	color: #000;
+}
+.slider p {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.slides a {
+	padding: 16px 40px;
+	border-radius: 3px;
+}
+.features {
+	margin-top:10px;
+	border-bottom: 2px solid #eee;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.features-list{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.features-item h3{
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+.features-item p{
+	margin-right: 40px;
+	margin-bottom: 40px;
+}
+.features-item .button{
+	padding: 16px 40px;
+	
+}
+
+/*about-us*/
+.about-us {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	margin-top: 50px;;
+}
+.description {
+	width:660px;
+}
+.statistics {
+	width:360px;
+}
+.description p {
+	margin: 40px 0;
+}
+
+
+
+/*partner*/
+.partner .partner-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 1160px;
+}
+.partner .partner-item {
+	border-right:2px solid #eee;
+	width:250px;
+	margin:50px;
+	padding-right:50px;
+	
+}
+
+
+
+
