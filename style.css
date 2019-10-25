@@ -233,8 +233,8 @@ table td {
 /*footer*/
 .main-footer {
     color:#000;
-
-    background-color: #fff;
+		background-color: #fff;
+		text-align: center;
 }
 footer .contacts h3 {
 	font-size: 16px;
@@ -242,13 +242,17 @@ footer .contacts h3 {
 	text-transform: uppercase;
 	line-height: 20px;
 }
+footer .map-frame img {
+	width: 100%;
+	height: auto;
+}
 
 /*Сетка*/
 .main-header {
 	width: 100%;
 	background-color: #eee;
 }
-.container, .main-footer {
+.container {
 	width: 1160px;
 	margin:0 auto;
 }
