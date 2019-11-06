@@ -19,8 +19,16 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+.visually-hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
 .button {
-    font:inherit;
+    font-size: 16px;
+	font-weight: 500;
 
     text-align: center;
     color:#fff;
@@ -56,15 +64,46 @@ a {
 	font-weight: 500;
 	text-transform: uppercase;
 	color:#000;
-    vertical-align: middle;
+	vertical-align: middle;
+	margin-right: 50px;
 }
-.basket a {
+.site-navigation li:last-child{
+	margin-left: 150px;
+}
+.basket  {
+	position: relative;
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 500;
 	text-transform: uppercase;
 	color:#000;
     vertical-align: middle;
+}
+.basket:before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-image: url(img/icon-basket.svg);
+	background-repeat: no-repeat;
+	top: 10%;
+	right: 100px;
+}
+
+
+.site-navigation a:hover, .basket a:hover {
+	color: #fb565a;
+}
+
+.site-navigation a:active, .basket a:active {
+	color: #666;;
+}
+.site-navigation a:focus, .basket a:focus{
+    color: #000;
+}
+
+.main-header {
+    background-color: #efefef;
 }
 
 /* slider */
@@ -74,7 +113,8 @@ a {
     width: 100%; /* Поставить ширину контейнера*/
     margin: 0 auto;
     position: relative;
-    background-color: #efefef;
+	background-color: #efefef;
+	margin-top: 60px;
 }
 .slider-items {
     
@@ -96,20 +136,20 @@ a {
     background-image: url(img/bg-slide-01.png); 
 	background-repeat: no-repeat;
 	background-position-x: 100%;
-	background-position-y: 0%;
+	background-position-y: 100%;
 
 }
 .slide2 { 
     background-image: url(img/bg-slide-02.png); 
 	background-repeat: no-repeat;
 	background-position-x: 100%;
-	background-position-y: 0%;
+	background-position-y: 100%;
 }
 .slide3 { 
     background-image: url(img/bg-slide-03.png);
 	background-repeat: no-repeat; 
 	background-position-x: 100%;
-	background-position-y: 0%;
+	background-position-y: 100%;
 
 }
 .slider .controls {
@@ -158,8 +198,7 @@ a {
 	opacity: 0;
 	position: absolute;
 	width: inherit;
-	z-index: 0;
-	transform: scale(1.5);
+
 }
 #slide1:checked ~ .slider-items > .slide1,
 #slide2:checked ~ .slider-items > .slide2,
@@ -180,9 +219,14 @@ a {
 .features-list, .partner-list {
 	list-style: none;
 }
+.features-list li {
+	margin-right: 40px;
+	margin-bottom: 30px;
+}
 
 .features-item .button {
-    font:inherit;
+    font-size: 16px;
+	font-weight: 500;
 
     text-align: center;
     color:#fff;
@@ -199,65 +243,20 @@ a {
 .features-item .button-yellow {
 	background-color: #eab534;
 }
-.about-us .description-list {
-	list-style: none;
-}
-/*добавить красные полоски списку*/
-.about-us .description-list::before {
-	content:"";
-	
-	width: 25px;
-    height: 2px;
-    background-color: #fb565a;
-}
-.about-us h2 {
-	font-size: 45px;
-	font-weight: 500;
-	line-height: 45px;
-}
-/*Таблица*/
-.about-us caption {
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	line-height: 20px;
-}
-
-table .percent{
-	font-size: 45px;
-	font-weight: 500;
-}
-table td {
-	padding: 12px 16px;
-}
-/*footer*/
-.main-footer {
-    color:#000;
-		background-color: #fff;
-		text-align: center;
-}
-footer .contacts h3 {
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	line-height: 20px;
-}
-footer .map-frame img {
-	width: 100%;
-	height: auto;
-}
 
 /*Сетка*/
 .main-header {
 	width: 100%;
-	background-color: #fff;
+	background-color: #eee;
 }
 .container {
 	width: 1160px;
+	max-width: 100%;
 	margin:0 auto;
 }
 .header-container {
 	width: 1160px;
+	max-width: 100%;
 	margin:0 auto;
 	padding-top:50px;
 }
@@ -266,14 +265,40 @@ footer .map-frame img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	padding:10px;
 	
 	height: 65px;
 }
+
+.menu-hamburger{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding:10px;
+	position: relative;
+
+	height: 65px;
+}
+.menu-hamburger-button {
+	position: absolute;
+	top: -15px;
+	right: 100px;
+	border: 0;
+	background-color: transparent;
+	font-size: 16px;
+	width: 300px;
+	height: 100px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 360px;
+
+}
 .site-navigation {
 	width:700px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 }
 .slider {
 	padding-top:10px;
@@ -319,7 +344,6 @@ footer .map-frame img {
 	padding: 16px 40px;
 	
 }
-
 /*about-us*/
 .about-us {
 	display: flex;
@@ -328,8 +352,19 @@ footer .map-frame img {
 
 	margin-top: 50px;;
 }
+.about-us h2 {
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 45px;
+}
 .description {
 	width:660px;
+}
+.description h3 {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
 }
 .statistics {
 	width:360px;
@@ -337,8 +372,42 @@ footer .map-frame img {
 .description p {
 	margin: 40px 0;
 }
+.about-us .description-list {
+	list-style: none;
+	position: relative;
+	padding-bottom:20px;
+	padding-left:35px;
+}
+.about-us .description-item {
+	margin-top: 20px;
+}
+/*добавить красные полоски списку*/
 
+.about-us .description-item::before {
+	content: "";
+	position: absolute;
+	width: 25px;
+	height: 2px;
+	background-color: #fb565a;
+	left:0px;
+	margin-top: 10px;
+}
 
+/*Таблица*/
+.about-us caption {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+
+table .percent{
+	font-size: 45px;
+	font-weight: 500;
+}
+table td {
+	padding: 12px 16px;
+}
 
 /*partner*/
 .partner .partner-list {
@@ -352,5 +421,121 @@ footer .map-frame img {
 	width:250px;
 	margin:50px;
 	padding-right:50px;
+	opacity: .2;
+}
+.partner .partner-item:hover{
+	opacity:1;
+}
+
+/*footer*/
+.main-footer {
+    color:#000;
+	background-color: #fff;
+}
+footer .contacts h3 {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+footer .map-frame img {
+	width: 100%;
+	height: auto;
+}
+.main-footer .container {
+	position: relative;
+}
+.main-footer .contacts {
+	background-color: #fff;
+	width: 220px;
+	padding: 50px 50px 50px 50px;
+
+	position: absolute;
+	bottom: 270px;
 	
+}
+.main-footer .contacts h3{
+	padding-bottom: 20px;
+}
+.main-footer .contacts p {
+	padding-bottom: 20px;
+	color:#666;
+}
+.main-footer .contacts .button {
+	display: inline-block;
+	padding: 16px 40px;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	color:#fff;
+	vertical-align: middle;
+	text-transform: uppercase;
+	background-color:#fb565a;
+	border: none;
+	border-radius: 3px;
+}
+
+.footer-social {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+.footer-social ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	list-style: none;
+	width: 300px;
+}
+
+.footer-social ul li{
+	width: 80px;
+	background-color:#e1e1e1;
+	border-radius: 50%;
+	margin-right:10px;
+	position: relative;
+}
+
+
+.footer-social-title {
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 45px;
+}
+.footer-social-text {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 36px;
+	color:#666;
+}
+.fa-facebook {
+	font-family: FontAwesome;
+	font-size: 24px;
+	color:white;
+	position: absolute;
+	top:40%;
+	left:40%
+}
+.fa-instagram {
+	font-family: FontAwesome;
+	font-size: 24px;
+	color:white;
+	position: absolute;
+	top:40%;
+	left:40%
+}
+.fa-vk
+ {
+	font-family: FontAwesome;
+	font-size: 24px;
+	color:white;
+	position: absolute;
+	top:40%;
+	left:40%
+}
+.footer-social ul li:hover {
+	background-color: #fb565a;
 }

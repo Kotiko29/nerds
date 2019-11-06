@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>nerds</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="media.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <header class="main-header">
@@ -15,15 +18,19 @@
         <a class="main-header-logo">
           <img src="img/nerds-logo.svg" width="160" height="60" alt="Логотип сайта nerds">
         </a>
-        <ul class="site-navigation">
-          <li><a href="studio.html">Cтудия</a></li>
-          <li><a href="client.html">Клиенты</a></li>
-          <li><a href="shop.html">Магазин</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-        <div class="basket">
-          <a href="#">корзина</a>
-        </div>
+        <button class="menu-hamburger-button" id="hamburger-button">close</button>
+        <div class="menu-hamburger menu-dropdown">
+          <ul class="site-navigation">
+            <li><a href="studio.html">студия</a></li>
+            <li><a href="client.html">клиенты</a></li>
+            <li><a href="shop.html">магазин</a></li>
+            <li><a href="contacts.html">контакты</a></li>
+            <li><a href="#" class="basket">корзина</a></li>
+          </ul>
+          <!--<div class="basket">
+            <a href="#">корзина</a>
+          </div>-->
+         </div>
       </nav>
       <div class="slider">
         <input type="radio" name="point" id="slide1" checked>
@@ -36,12 +43,12 @@
             <a class="button" href="#">Узнать больше</a>
           </div>
           <div class="slides slide2">
-            <b>Любим математику как никто другой</b>
+            <b>Любим математику<br> как никто другой</b>
             <p>Никакого креатива, только математические формулы <br> для рассчета идеальных пропорций.</p>
             <a class="button" href="#">Узнать больше</a>
           </div>
           <div class="slides slide3">
-            <b>Только ночь, только хардкор</b>
+            <b>Только ночь,<br> только хардкор</b>
             <p>Работаем днем, как все? Мы против этого.<br>Ближе к полуночи работа только начинается.</p>
             <a class="button" href="#">Узнать больше</a>
           </div>
@@ -68,13 +75,13 @@
         </li>
         <li class="features-item">
           <img src="img/main-applications.jpg" alt="Приложения">
-          <h3>приложения</h3>
+          <h3>Приложения</h3>
           <p>Покорите топ-10 приложений <br> в AppStore и Google Play</p>
           <a class="button button-green" href="#">заказать</a>
         </li>
         <li class="features-item">
           <img src="img/main-presentations.jpg" alt="Презентации">
-          <h3>презентации</h3>
+          <h3>Презентации</h3>
           <p>Вы даже не подозреваете,<br> насколько вы изумителны</p>
           <a class="button button-yellow" href="#">заказать</a>
         </li>
@@ -133,7 +140,7 @@
     <div class="map">
       <h2 class="visually-hidden">Как до нас добраться</h2>
       <div class="map-frame">
-        <img src="img/map.jpg" width="780" height="400" alt="Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19.8">
+        <img src="img/map.jpg" alt="Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19.8">
       </div>
       <div class="container">
         <div class="contacts">
@@ -144,13 +151,15 @@
           <a class="button" href="#">напишите нам</a>
         </div>
         <div class="footer-social">
-          <b>Давайте дружить, это выгодно!</b>
-          <p>Скидка 10% для друзей из социальных сетей.</p>
-          <ul>
-            <li><a class="social-button" href="#">ВКонтакте</a></li>
-            <li><a class="social-button" href="#">Фейсбук</a></li>
-            <li><a class="social-button" href="#">Инстаграм</a></li>
+          <ul class="social-share">
+              <li><a class="social-button social-vk" href="#"><i class="fa fa-vk fa-3x" aria-hidden="true"></i></a></li>
+              <li><a class="social-button social-fb" href="#"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a></li>
+              <li><a class="social-button social-instagram" href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a></li>
           </ul>
+          <div class="footer-social-offer">
+            <p class="footer-social-title">Давайте дружить, это выгодно!</p>
+            <p class="footer-social-text">Скидка 10% для друзей из социальных сетей.</p>
+          </div>
         </div>
       </div> 
     </div>
