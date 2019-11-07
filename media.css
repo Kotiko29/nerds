@@ -43,7 +43,15 @@
     }
     .features-list {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    .features .features-item {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .features .button {
+        display: block;
     }
 
 /*******.about-us******/
