@@ -1,5 +1,9 @@
 
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
+    .container {
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
     /*******MENU******/
     .main-header-navigation{
         position: relative;
@@ -12,29 +16,30 @@
         top: 10%;
         left: -40%;
         font-size: 50px;
- }
+    }
     .menu-dropdown{
         display: none;
         position: absolute;
         right: 0;
         left: 0;
         margin: 0;
-  }
+    }
 
     .main-header .slides {
-    background-image: none;
-}
+        background-image: none;
+    }
     .main-header .slides .button {
-    display: block;
-    padding-top: 30px;
-}
+        display: block;
+        padding-top: 30px;
+    }
     .main-header .slider-items b {
-    font-size: 60px;
-    line-height: 64px;
-}
-.slider .controls {
-    top: 330px;
-}
+        font-size: 26px;
+        line-height: 31px;
+    }
+    
+    .slider .controls {
+        top: 330px;
+    }
 
     /*******features******/
     .features {
@@ -52,6 +57,9 @@
     }
     .features .button {
         display: block;
+    }
+    .features img {
+        width:100%;
     }
 
 /*******.about-us******/
